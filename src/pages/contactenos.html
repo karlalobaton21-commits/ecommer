@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../style/output.css">
     <title>Document</title>
 </head>
-<body >
+<body class="bg-gray-200">
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <nav class="container  mx-auto px-4 py-4">
           <div class="flex justify-between items-center">
@@ -42,12 +42,12 @@
               <a href="./categorias.html" class="text-gray-700 hover:text-blue-600 font-medium
               transition-colors duration-200 relative group">
               Categorías
-              <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600"></span>
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
               </a>
               <a href="./contactenos.html" class="text-gray-700 hover:text-blue-600 font-medium
               transition-colors duration-200 relative group">
               Contacto
-              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+              <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600"></span>
               </a>
             </div>
             
@@ -76,37 +76,214 @@
           </div>
         </nav>
       </header>
-    <main class="  grid-cols-1 md:grid-cols-2">
-        <div class="p-10 ">
-            <h1 class="font-bold pb-5">Envíanos un mensaje</h1>
-            <form action="">
+    <main class=" grid  grid-cols-1 md:grid-cols-2 gap-10 mt-20 mx-50 mb-30">
+        <section class="p-10 bg-white rounded-lg hover:-translate-y-1 hover:shadow-md  hover:shadow-gray-300 transition-transform duration-300 ease-in-out">
+            <h1 class="font-bold pb-5 text-xl">Envíanos un mensaje</h1>
 
-                <div>
-                    <label for="nombre">Nombre completo*</label><br>
-                    <input type="text" placeholder="Tu nombre completo" class="border-2 border-gray-400 p-2 focus:outline-none focus:border-blue-400 rounded-lg">
+              <form class="grid grid-cols-1 md:grid-cols-2 gap-4" action="">
+                  <div>
+                      <label class="block" cfor="nombre">Nombre completo<span class="text-red-500">*</span></label>
+                      <input type="text" placeholder="Tu nombre completo" class="border-1 w-full border-gray-300 p-2 focus:outline-none focus:border-blue-400 rounded-lg">
+                  </div>
+                  
+                  <div>
+                      <label class="block" for="">Correo electronico<span class="text-red-500">*</span></label>
+                      <input type="text" placeholder="Tu nombre completo" class="border-1 w-full border-gray-300 p-2 focus:outline-none focus:border-blue-400 rounded-lg">
+                  </div>
+
+                  <div>
+                      <label class="block" for="">Telefono</label>
+                      <input type="tel" placeholder="Tu nombre completo" class="border-1 w-full border-gray-300 p-2 focus:outline-none focus:border-blue-400 rounded-lg">
+                  </div>
+                  <!--seleccionar una opcion-->
+                  <div>
+                      <label class="block" for="">tipo de consulta <span class="text-red-500">*</span></label>
+                      <select id="country-select" name="country" class="mt-1 block w-full pl-3 pr-10 py-2 text-base focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md  bg-white border border-gray-300">
+                        <option value="uno">Problema Técnico</option>
+                        <option value="dos">Estado de un Pedido</option>
+                        <option value="tres">Devoluciones</option>
+                        <option value="cuatro">Pregunta sobre un Producto</option>
+                      </select>
+                  </div>
+
+                  <div class="col-span-full">
+                      <label class="block" for="">Mensaje<span class="text-red-500">*</span></label>
+                      <textarea name="" id="" placeholder="Tu nombre completo" class="col-span-full w-full border-1 border-gray-300 p-2 focus:outline-none focus:border-blue-400 rounded-lg"></textarea>
+                  </div>
+
+             <!--checkbox-->
+                <div class="flex items-center">
+                  <input
+                    id="my-checkbox"type="checkbox"class="rounded text-indigo-600 border-gray-300 focus:ring-indigo-500 mr-2"
+                  />
+                  <label class=" inline-block text-gray-800" for="my-checkbox">
+                    He leido y acepto la <span class=" text-blue-700 ">politica de privacidad</span> y el tratamiento de mis datos personales*
+                  </label>
+              </div>
+              
+                <div class="col-span-full grid ">
+                    <button class="hero bg-linear-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-sm p-2 text-white font-semibold">Enviar Mensaje</button>
                 </div>
-                <div>
-                    <label for=""></label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label for=""></label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label for=""></label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label for=""></label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <div>
-                    <button></button>
-                </div>
-                
             </form>
+        </section>
+
+        <section class="p-10 bg-white rounded-lg hover:-translate-y-1 hover:shadow-md  hover:shadow-gray-300 transition-transform duration-300 ease-in-out mr-50 ">
+            <h1 class="font-bold pb-5 text-xl">Información de Contacto</h1>
+            <div class="pl-5">
+
+                  <div class="flex items-start gap-4">
+                    <div class="relative p-2.5 bg-blue-100 rounded-xl ">
+                        <svg class="w-6 h-6 text-blue-600 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z M19.5 10.5c0 7.5-7.5 11.25-7.5 11.25S4.5 18 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                      <h2 class="font-bold">Oficina Principal</h2>
+                      <p>Carrera 11 # 93-07, Oficina 501 <br>Bogota D.C, Colombia</p>
+                      <h6 class="text-gray-500">Zona Rosa - Chapinero</h6><br>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="relative p-2.5 bg-green-100 rounded-xl ">
+                        <svg class="w-6 h-6 mx-auto text-green-600 transition-all duration-300 " fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0-1.243 1.007-2.25 2.25-2.25h1.372c.516 0 .966.351 1.091.852l.862 3.447a1.125 1.125 0 0 1-.291 1.06l-1.21 1.21a.75.75 0 0 0-.075.977c.807 1.162 2.06 2.415 3.222 3.222a.75.75 0 0 0 .977-.075l1.21-1.21a1.125 1.125 0 0 1 1.06-.291l3.447.862c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-1.5C8.128 21.75 2.25 15.872 2.25 8.25v-1.5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                      <h2 class="font-bold">Telefono</h2>
+                      <p>Linea fija: +57 (1) 234-5678 <br>Celular: +57 300 123 4567 <br> WhatsApp Business: +57 300 123 4567</p> <br>
+                    </div>
+                </div>
+
+                  <div class="flex items-start gap-4" >
+                    <div class="relative p-2.5 bg-fuchsia-100 rounded-xl ">
+                        <svg class="w-6 h-6 mx-auto text-fuchsia-600 transition-all duration-300 " fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 8.25v8.25a2.25 2.25 0 0 1-2.25 2.25H4.5a2.25 2.25 0 0 1-2.25-2.25V8.25m19.5 0A2.25 2.25 0 0 0 19.5 6H4.5a2.25 2.25 0 0 0-2.25 2.25m19.5 0L12 13.5 2.25 8.25"/>
+                        </svg>
+                    </div>
+                    <div>
+                     <h2 class="font-bold">Correos Departamentales</h2>
+                      <p>General: info@techstore.co <br>
+                        Ventas: ventas@techstore.co <br>
+                      Soporte: soporte@techstore.co <br>
+                      Gerencia: gerencia@techstore.co</p><br>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="relative p-2.5 bg-orange-100 rounded-xl ">
+                        <svg class="w-6 h-6 mx-auto text-orange-600 transition-all duration-300 " fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                      <h2 class="font-bold">Horarios de Atención</h2>
+                      <p>Lunes a Viernes: 8:00 AM - 6:00 PM <br>Sabado 9:00 AM - 3:00 PM <br>Domingos y festivos: Cerrado </p>
+                      <h6 class="text-gray-500">Zona horaria: GMT-5 (Bogotá)</h6>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <section class="p-10 bg-blue-100 border-1 border-blue-200 rounded-lg hover:-translate-y-1 hover:shadow-md  hover:shadow-gray-300 transition-transform duration-300 ease-in-out">
+          <h1 class="font-bold pb-6 text-xl">¿Por qué elegirnos?</h1>
+
+        <div class="flex">
+          <div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-blue-500 mr-2">
+             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div>
+             <p>Atención personalizada y especializada</p><br>
+          </div>
         </div>
+
+        <div class="flex">
+          <div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-blue-500 mr-2">
+             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div>
+             <p>Soporte tecnico post-venta incluido</p><br>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-blue-500 mr-2">
+             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div>
+             <p>Garantia extendida en todos nuestros productos</p><br>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-blue-500 mr-2">
+             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div>
+             <p>Envío gratis en compras superiores a $500.000</p>
+          </div>
+        </div>
+        </section>
+
+        <section class="p-10 bg-white rounded-lg hover:-translate-y-1 hover:shadow-md  hover:shadow-gray-300 transition-transform duration-300 ease-in-out mr-50">  
+          <h1 class="font-bold pb-6 text-xl ">Siguenos en Redes Sociales</h1>
+
+          <div class="grid grid-cols-2 gap-7">
+            <div class="flex items-center gap-4 border-1 rounded-md border-gray-300 pl-3 ">
+                <p>📘</p>
+              <div>
+                  <h2>Facebook</h2>
+                  <p class="text-gray-500 ">@techstore.co</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 border-1 rounded-md border-gray-300 pl-3">
+                <p>📸</p>
+              <div>
+                  <h2>Instagram</h2>
+                  <p class="text-gray-500">@techstore_co</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 border-1 rounded-md border-gray-300 pl-3">
+                <p>🗿</p>
+              <div>
+                  <h2>Twitter/X</h2>
+                  <p class="text-gray-500">@techstore_co</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 border-1 rounded-md border-gray-300 pl-3">
+                <p>💬</p>
+              <div>
+                  <h2>WhatsApp</h2>
+                  <p class="text-gray-500">Chat directo</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 border-1 rounded-md border-gray-300 pl-3">
+                <p>📺</p>
+              <div>
+                  <h2>Youtube</h2>
+                  <p class="text-gray-500">Techstore TV</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 border-1 rounded-md border-gray-300 pl-3">
+                <p>💼</p>
+              <div>
+                  <h2>Linkedln</h2>
+                  <p class="text-gray-500">Techstore Pro</p>
+              </div>
+            </div>
+        </section>
 
     </main>
           <footer id="contacto" class="bg-gray-900 text-white py-12">
